@@ -4,7 +4,7 @@ from .models import Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'author', 'publish', 'status']
+    list_display = ['id', 'title', 'slug', 'author', 'publish', 'status']
     list_filter = ['status', 'created', 'publish', 'author']
     search_fields = ['title', 'body']
     prepopulated_fields = {'slug': ('title',)}
@@ -12,3 +12,5 @@ class PostAdmin(admin.ModelAdmin):
     autocomplete_fields = ['author']
     date_hierarchy = 'publish'
     ordering = ['status', 'publish']
+
+
