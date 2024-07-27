@@ -5,7 +5,7 @@ from .models import Post
 def post_list(request):
     posts = Post.published.all()
     return render(request,
-                  'blog/posts/list.html',
+                  'blog/post/list.html',
                   {'posts': posts})
 
 
@@ -14,4 +14,4 @@ def post_detail(request, id):
                               status=Post.Status.PUBLISHED)
     return render(request,
                   'blog/post/detail.html',
-                  {'posts': posts})
+                  {'post': posts})
