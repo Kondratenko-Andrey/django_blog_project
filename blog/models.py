@@ -34,7 +34,9 @@ class Post(models.Model):
     published = PublishedManager()
 
     class Meta:
+        # сортировать результаты по полю publish (убывание)
         ordering = ['-publish']
+        # определение индекса по полю publish для ускорения поиска
         indexes = [
             models.Index(fields=['-publish']),
         ]
